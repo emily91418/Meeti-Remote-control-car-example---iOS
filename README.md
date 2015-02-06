@@ -8,7 +8,7 @@ Remote Control Car Example - Usage of MeetiFramework
 # About Meeti-iOS
 https://github.com/MOBAGEL/MeetiFramework
 
-# Web to  Apply for Testing Account for Meeti 帳號網站
+# Web to  Apply for Testing Account for Meeti 
 http://meeti.mobagel.com
 
 # Notice of Development    
@@ -34,15 +34,15 @@ s	  Stop
 # Introduction to Main Objects  
 
 ### loginViewController  
-實現登入的頁面  
-1.Login 功能主要是取token， 待token取到後，除非token失效，否則不必再呼叫Login
+Segue for login  
+1.The main purpose for login is to get its token. After getting the token, unless it fails otherwise you don't have to call login again
 
 
       
 ### remoteControlViewController 
-實作遙控車的預設的功能
+Default capabilities for remote controller car
 
-1.輸入訊息前一定要加入群組中  
+1. MUST login to the group before sending a message to that group  
 > {
   [[MeetiServer sharedInstance] joinToGroup:EXAMPLE_GROUP_ID shandle:^(NSString *responseString) {
         NSLog(@"Join to group success %@",responseString);
@@ -52,4 +52,4 @@ s	  Stop
   }
 
 ### cameraViewController  
-實現照相機的功能
+Segue where you can take a photo
